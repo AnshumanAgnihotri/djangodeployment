@@ -16,7 +16,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install python3 python3-pip -y
-          pip install -r; cat requirements.txt
+          pip install -r | cat > requirements.txt
       
           run: |
           aws ec2 start-instances --instance-ids ${{secrets.AWS_EC2_INSTANCE_ID }}
